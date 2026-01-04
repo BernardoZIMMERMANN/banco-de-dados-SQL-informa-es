@@ -1,0 +1,22 @@
+-- 1. CRIA E SELECIONA O BANCO DE DADOS (Este é o passo que faltava)
+-- Criamos um banco de dados de exemplo para trabalhar
+CREATE DATABASE IF NOT EXISTS exercicio_sql;
+-- Selecionamos ele para que o MySQL saiba onde criar a tabela
+USE exercicio_sql;
+
+-- 2. Cria a tabela de clientes
+CREATE TABLE clientes (
+    cpf VARCHAR(11) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE
+);
+
+-- 3. Insere os dados
+INSERT INTO clientes (cpf, nome, email) VALUES
+('12345678901', 'João Silva', 'joao.silva@exemplo.com'),
+('98765432109', 'Maria Santos', 'maria.santos@exemplo.com'),
+('11223344556', 'Pedro Costa', 'pedro.costa@exemplo.com'),
+('66778899001', 'Ana Oliveira', 'ana.oliveira@exemplo.com');
+
+-- 4. Visualiza os dados
+SELECT * FROM clientes;
